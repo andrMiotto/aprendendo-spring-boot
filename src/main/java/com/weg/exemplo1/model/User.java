@@ -11,6 +11,10 @@ public class User {
         this.nome = nome;
     }
 
+
+    public User() {
+    }
+
     public int getId() {
         return id;
     }

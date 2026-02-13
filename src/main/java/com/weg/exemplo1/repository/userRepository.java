@@ -71,5 +71,22 @@ public class userRepository {
     }
 
 
+    public void atualizarUsuario(User user) throws SQLException{
+
+        String query = "UPDATE users SET nome = ? where id = ?";
+
+
+        try(Connection connection = Conexao.conectar();
+        PreparedStatement stmt = connection.prepareStatement(query)){
+
+            stmt.setLong(1, user.getId());
+            stmt.setString(2, user.getNome());
+            stmt.executeUpdate();
+        }
+
+
+    }
+
+
 
 }
